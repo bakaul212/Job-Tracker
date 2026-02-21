@@ -58,3 +58,35 @@ function render() {
         </div>
     `).join('');
 }
+function updateStatus(id, newStatus) {
+    jobs = jobs.map(job => {
+        if (job.id === id) {
+            return { ...job, status: job.status === newStatus ? 'none' : newStatus };
+        }
+        return job;
+    });
+    render();
+}
+
+function deleteJob(id) {
+    jobs = jobs.filter(job => job.id !== id);
+    render();
+}
+
+window.filterJobs = function(type) {
+    currentFilter = type;
+    ['all', 'interview', 'rejected'].forEach(t => {
+        const btn = document.getElementById(`btn-${t}`);
+        if (t === type) {
+            btn.classList.add('bg-blue-600', 'text-white');
+            btn.classList.remove('text-slate-600');
+        } else {
+            btn.classList.remove('bg-blue-600', 'text-white');
+            btn.classList.add('text-slate-600');
+        }
+    });
+    render();
+}
+
+// Initial Render
+render();
