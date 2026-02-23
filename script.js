@@ -1,5 +1,3 @@
-
-// Initial Job Data
 let jobs = [
     { id: 1, company: "Mobile First Corp", role: "React Native Developer", location: "Remote", type: "Full-time", salary: "$130k - $175k", status: "none", desc: "Build cross-platform mobile applications using React Native. Work on products used by millions." },
     { id: 2, company: "WebFlow Agency", role: "Web Designer", location: "Los Angeles, CA", type: "Part-time", salary: "$80k - $120k", status: "none", desc: "Create stunning web experiences for high-profile clients using modern design trends." },
@@ -16,17 +14,28 @@ let currentFilter = 'all';
 function render() {
     const container = document.getElementById('jobs-container');
     const emptyState = document.getElementById('empty-state');
+    const sectionCountElement = document.getElementById('section-count');
     
     const filteredJobs = jobs.filter(job => {
         if (currentFilter === 'all') return true;
         return job.status === currentFilter;
     });
 
-    // Update Dashboard Counts
     document.getElementById('total-count').innerText = jobs.length;
     document.getElementById('interview-count').innerText = jobs.filter(j => j.status === 'interview').length;
     document.getElementById('rejected-count').innerText = jobs.filter(j => j.status === 'rejected').length;
-    document.getElementById('section-count').innerText = filteredJobs.length;
+
+    if (jobs.length === 0) {
+        sectionCountElement.innerText = "0 jobs";
+    } else if (currentFilter === 'all') {
+        sectionCountElement.innerText = `${jobs.length} jobs`;
+    } else {
+        if (filteredJobs.length === 0) {
+            sectionCountElement.innerText = "0 jobs";
+        } else {
+            sectionCountElement.innerText = `${filteredJobs.length} of ${jobs.length} jobs`;
+        }
+    }
 
     if (filteredJobs.length === 0) {
         container.innerHTML = "";
@@ -36,28 +45,48 @@ function render() {
 
     emptyState.classList.add('hidden');
     container.innerHTML = filteredJobs.map(job => `
-        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 relative">
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 relative group">
             <button onclick="deleteJob(${job.id})" class="absolute top-4 right-4 text-slate-300 hover:text-red-500 transition">
                 <i class="fa-solid fa-trash-can"></i>
             </button>
             <h4 class="text-xl font-bold text-slate-800">${job.company}</h4>
             <p class="text-blue-600 font-medium mb-2">${job.role}</p>
+            
             <div class="flex flex-wrap gap-4 text-sm text-slate-500 mb-3">
                 <span><i class="fa-solid fa-location-dot mr-1"></i>${job.location}</span>
                 <span><i class="fa-solid fa-briefcase mr-1"></i>${job.type}</span>
                 <span><i class="fa-solid fa-money-bill-wave mr-1"></i>${job.salary}</span>
             </div>
-            <span class="inline-block bg-slate-100 text-slate-600 text-[10px] font-bold px-2 py-1 rounded mb-3 uppercase tracking-wider">
-                ${job.status === 'none' ? 'Not Applied' : job.status}
-            </span>
+
+            ${job.status !== 'none' ? `
+                <span class="inline-block ${job.status === 'interview' ? 'bg-emerald-100 text-emerald-700 border-emerald-200' : 'bg-red-100 text-red-700 border-red-200'} text-[10px] font-bold px-2 py-1 rounded border mb-3 uppercase tracking-wider">
+                    ${job.status}
+                </span>
+            ` : `
+                <span class="inline-block bg-slate-100 text-slate-600 border-slate-200 text-[10px] font-bold px-2 py-1 rounded border mb-3 uppercase tracking-wider">
+                    Not Applied
+                </span>
+            `}
+
             <p class="text-slate-600 text-sm mb-4 leading-relaxed">${job.desc}</p>
+            
             <div class="flex gap-3">
-                <button onclick="updateStatus(${job.id}, 'interview')" class="px-4 py-2 border-2 border-emerald-500 text-emerald-600 rounded-md font-bold text-sm hover:bg-emerald-50 transition ${job.status === 'interview' ? 'bg-emerald-500 text-white hover:bg-emerald-600' : ''}">INTERVIEW</button>
-                <button onclick="updateStatus(${job.id}, 'rejected')" class="px-4 py-2 border-2 border-red-400 text-red-500 rounded-md font-bold text-sm hover:bg-red-50 transition ${job.status === 'rejected' ? 'bg-red-400 text-white hover:bg-red-500' : ''}">REJECTED</button>
+                <button onclick="updateStatus(${job.id}, 'interview')" 
+                    class="px-4 py-2 border-2 border-emerald-500 rounded-md font-bold text-sm transition 
+                    ${job.status === 'interview' ? 'bg-emerald-500 text-white' : 'text-emerald-600 hover:bg-emerald-50'}">
+                    INTERVIEW
+                </button>
+                
+                <button onclick="updateStatus(${job.id}, 'rejected')" 
+                    class="px-4 py-2 border-2 border-red-500 rounded-md font-bold text-sm transition 
+                    ${job.status === 'rejected' ? 'bg-red-500 text-white' : 'text-red-600 hover:bg-red-50'}">
+                    REJECTED
+                </button>
             </div>
         </div>
     `).join('');
 }
+
 function updateStatus(id, newStatus) {
     jobs = jobs.map(job => {
         if (job.id === id) {
@@ -88,5 +117,4 @@ window.filterJobs = function(type) {
     render();
 }
 
-// Initial Render
 render();

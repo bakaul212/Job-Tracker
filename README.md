@@ -1,83 +1,43 @@
-## Welcome To ( সহজ সরল সিম্পল ) Assignment - 4 
+1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 
+ 1.1 getElementById: Returns a single element by its unique ID. It is highly efficient and the fastest way to select an element.
 
----
-# 📅 Deadline For 60 marks: 23th February, 2026 (11:59 pm ⏱️)
-# 📅 Deadline For 50 marks: 24th February, 2026 (11:59 pm ⏱️)
-# 📅 Deadline For 30 marks: Any time after 24th February.
+ 1.2 getElementsByClassName: Returns a "live" HTMLCollection of all elements with a specific class. If the DOM updates, this collection updates automatically.
 
+ 1.3 querySelector: Uses CSS selector syntax (e.g., .class, #id, div > p) and returns only the first matching element.
 
-# Main Requirements
+ 1.4 querySelectorAll: Uses CSS selectors to return all matching elements in a static NodeList. Unlike HTMLCollections, it does not update automatically if the DOM changes.
 
-## Design Part
+2. How do you create and insert a new element into the DOM? 
 
-## Dashboard
-- Website name and Create a dashboard like figma 
-- The section should be responsive for mobile devices. It is totally up to you. 
+ The process involves three main steps:
 
-## Available Jobs Section
-- A title on the left side, jobs count on the right side 
-- 3 different tab  below the section title 
-- Minimum 8 cards with:
-	- companyName
-	- position
-	- location
-	- type
-	- salary
-	- description
-	- 2 buttons: Interview, Rejected
-- By default all the jobs data will show on All tab, and the Interview, Rejected tab will show “No jobs Available” message with a subtitle below and an icon/image on the above
+ 2.1 Creation: Use document.createElement('tagName') to create the element node (e.g., const div = document.createElement('div');).
 
-- The section should be responsive for mobile devices. It is totally up to you.
+ 2.2 Configuration: Add content or attributes using properties like innerText, innerHTML, or classList.add().
 
---- 
+ 2.3 Insertion: Use methods like appendChild() to add it as the last child of a parent, or prepend() to add it as the first child.
 
-## Functionalities Part
-- Clicking on Interview button on the card 
-    - will add the data on Interview tab 
-    - add the status as Interview.
-    - Will increase the the count of interview in Dashboard 
+Example: parentElement.appendChild(newElement);
 
-- Clicking on Rejected button on the card 
-    - will add the data on Rejected tab 
-    - add the status as Rejected.
-    - Will increase the the count of Rejected in Dashboard
+3. What is Event Bubbling? And how does it work?
 
-- Enable toggle between Interview and rejected button(you can select Rejected button after clicking on Interview, and Interview button after clicking on Rejected button). It will change the tab and dashboard count also. It will show tab wise jobs count on the right.
+ Event Bubbling is a phase in the DOM event propagation model where an event starts at the specific target element that triggered it and then "bubbles up" to its ancestors (parents, grandparents) in the DOM tree.
 
----
+ 3.1 How it works: If you click a button inside a <div>, the click event first triggers on the button. Then, it automatically triggers on the <div>, then the <body>, and finally the document level, unless it is manually stopped.
 
-# Challenges Requirements
-- Clicking on the delete button will remove that card from the UI, and the count will be deducted from the dashboard card and the main section.
-- No lorem ipsum text on your website. At least 8 meaningful commits in your project.  
+4. What is Event Delegation in JavaScript? Why is it useful?
 
-- Create a readme file and answer this question on your own. Don’t copy-paste from Google or any AI chatbot. 
+ Event Delegation is a design pattern where you attach a single event listener to a parent element instead of attaching multiple listeners to individual child elements.
 
+ 4.1Why it is useful:
 
-## Answers to Questions
+  4.1.1 Memory Efficiency: It saves memory by reducing the number of event listeners on the page.
 
-### 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
+  4.1.2 Dynamic Elements: It allows you to handle events for "future" elements that are added to the DOM dynamically (like new job cards) without needing to re-bind listeners.
 
-### 2. How do you create and insert a new element into the DOM?
+5. What is the difference between preventDefault() and stopPropagation() methods?
 
-### 3. What is Event Bubbling? And how does it work?
+ 5.1 preventDefault(): This method stops the default browser behavior associated with an event. For example, it prevents a form from submitting/reloading the page or a link from navigating to a URL.
 
-### 4. What is Event Delegation in JavaScript? Why is it useful?
-
-### 5. What is the difference between preventDefault() and stopPropagation() methods?
-
----
-
-
-**Technology Stack:**
-- HTML
-- CSS (Vanilla/Tailwind/DaisyUI)
-- JavaScript (Vanilla)
-
-
---- 
-
-## What to submit: 
-
-1. GitHub Repository Link: 
-2. Live Site Link: 
+ 5.2 stopPropagation(): This method stops the event from bubbling up the DOM tree. It ensures that the event triggers the handler on the current element but does not notify any parent elements that the event occurred.
