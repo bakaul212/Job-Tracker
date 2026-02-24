@@ -22,9 +22,16 @@ Example: parentElement.appendChild(newElement);
 
 3. What is Event Bubbling? And how does it work?
 
- Event Bubbling is a phase in the DOM event propagation model where an event starts at the specific target element that triggered it and then "bubbles up" to its ancestors (parents, grandparents) in the DOM tree.
+In the world of web development, Event Bubbling is a type of event propagation where an event starts from the deepest possible element (the target) and "bubbles" up through its ancestors in the DOM (Document Object Model) tree until it reaches the highest level (usually the window object).
 
- 3.1 How it works: If you click a button inside a <div>, the click event first triggers on the button. Then, it automatically triggers on the <div>, then the <body>, and finally the document level, unless it is manually stopped.
+Think of it like a bubble rising in a glass of soda—it starts at the bottom and travels all the way to the surface.
+
+How It Works (The Mechanics)
+When you click a button that is nested inside several other elements, the browser doesn't just trigger the click event on that button. It follows a specific cycle.
+
+ 1. The Target Phase: The event happens on the specific element you   interacted with (e.g., a <button>).
+
+ 2. The Bubbling Phase: The browser checks if the button's parent has an  event handler. If it does, that runs. Then it moves to the grandparent,  then the great-grandparent, and so on.
 
 4. What is Event Delegation in JavaScript? Why is it useful?
 
