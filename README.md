@@ -29,9 +29,10 @@ Think of it like a bubble rising in a glass of soda—it starts at the bottom an
 How It Works (The Mechanics)
 When you click a button that is nested inside several other elements, the browser doesn't just trigger the click event on that button. It follows a specific cycle.
 
- 1. The Target Phase: The event happens on the specific element you   interacted with (e.g., a <button>).
+ 3.1 The Target Phase: The event happens on the specific element you   interacted with (e.g., a <button>).
 
- 2. The Bubbling Phase: The browser checks if the button's parent has an  event handler. If it does, that runs. Then it moves to the grandparent,  then the great-grandparent, and so on.
+ 3.2 The Bubbling Phase: The browser checks if the button's parent has an  event handler. If it does, that runs. Then it moves to the grandparent,  then the great-grandparent, and so on.
+
 
 4. What is Event Delegation in JavaScript? Why is it useful?
 
