@@ -46,6 +46,22 @@ When you click a button that is nested inside several other elements, the browse
 
 5. What is the difference between preventDefault() and stopPropagation() methods?
 
- 5.1 preventDefault(): This method stops the default browser behavior associated with an event. For example, it prevents a form from submitting/reloading the page or a link from navigating to a URL.
+While both methods are used to "interrupt" the normal flow of events in the browser, they handle two completely different aspects of how an element behaves.
 
- 5.2 stopPropagation(): This method stops the event from bubbling up the DOM tree. It ensures that the event triggers the handler on the current element but does not notify any parent elements that the event occurred.
+To put it simply: preventDefault() stops an action, while stopPropagation() stops travel.
+
+ 5.1. preventDefault() — Stopping the Default Action
+Many HTML elements have built-in "default behaviors" defined by the browser. This method tells the browser: "Don't do what you usually do when this happens."
+
+ 5.1.1.Common Use Cases:
+
+   5.1.1.1.Stopping a link (<a>) from navigating to a new URL.
+
+   5.1.1.2.Stopping a form (<form>) from refreshing the page on submit.
+
+   5.1.1.3.Stopping a checkbox from being checked.
+
+ 5.2. stopPropagation() — Stopping the Bubble
+As we discussed with Event Bubbling, events normally travel from the target element up to the window. This method tells the browser: "Stop the event here. Don't let any parent elements know this happened."
+
+  5.2.1 Common Use Case: * You have a "Delete" button inside a clickable "Table Row." You want the button to delete the item without triggering the row's "Open Details" click event.
