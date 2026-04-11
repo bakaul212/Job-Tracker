@@ -1,67 +1,16 @@
-1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
+<h1 align="center">Hi 👋, I'm Md.Hosen Bakaul</h1>
+<h3 align="center">A passionate Full-stack web development from Bangladeshi</h3>
 
- 1.1 getElementById: Returns a single element by its unique ID. It is highly efficient and the fastest way to select an element.
+- 🔭 I’m currently working on [Job Application Tracker](https://golden-alpaca-2b85ea.netlify.app/)
 
- 1.2 getElementsByClassName: Returns a "live" HTMLCollection of all elements with a specific class. If the DOM updates, this collection updates automatically.
+- 💬 Ask me about **react , next.js , firebase, mongodb**
 
- 1.3 querySelector: Uses CSS selector syntax (e.g., .class, #id, div > p) and returns only the first matching element.
+- 📫 How to reach me **bakaul15-4163@diu.edu.bd**
 
- 1.4 querySelectorAll: Uses CSS selectors to return all matching elements in a static NodeList. Unlike HTMLCollections, it does not update automatically if the DOM changes.
+<h3 align="left">Connect with me:</h3>
+<p align="left">
+<a href="https://linkedin.com/in/www.linkedin.com/in/hosen-bakaul-5492b4306" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="www.linkedin.com/in/hosen-bakaul-5492b4306" height="30" width="40" /></a>
+</p>
 
-2. How do you create and insert a new element into the DOM? 
-
- The process involves three main steps:
-
- 2.1 Creation: Use document.createElement('tagName') to create the element node (e.g., const div = document.createElement('div');).
-
- 2.2 Configuration: Add content or attributes using properties like innerText, innerHTML, or classList.add().
-
- 2.3 Insertion: Use methods like appendChild() to add it as the last child of a parent, or prepend() to add it as the first child.
-
-Example: parentElement.appendChild(newElement);
-
-3. What is Event Bubbling? And how does it work?
-
-In the world of web development, Event Bubbling is a type of event propagation where an event starts from the deepest possible element (the target) and "bubbles" up through its ancestors in the DOM (Document Object Model) tree until it reaches the highest level (usually the window object).
-
-Think of it like a bubble rising in a glass of soda—it starts at the bottom and travels all the way to the surface.
-
-How It Works (The Mechanics)
-When you click a button that is nested inside several other elements, the browser doesn't just trigger the click event on that button. It follows a specific cycle.
-
- 3.1 The Target Phase: The event happens on the specific element you   interacted with (e.g., a <button>).
-
- 3.2 The Bubbling Phase: The browser checks if the button's parent has an  event handler. If it does, that runs. Then it moves to the grandparent,  then the great-grandparent, and so on.
-
-
-4. What is Event Delegation in JavaScript? Why is it useful?
-
- Event Delegation is a design pattern where you attach a single event listener to a parent element instead of attaching multiple listeners to individual child elements.
-
- 4.1Why it is useful:
-
-  4.1.1 Memory Efficiency: It saves memory by reducing the number of event listeners on the page.
-
-  4.1.2 Dynamic Elements: It allows you to handle events for "future" elements that are added to the DOM dynamically (like new job cards) without needing to re-bind listeners.
-
-5. What is the difference between preventDefault() and stopPropagation() methods?
-
-While both methods are used to "interrupt" the normal flow of events in the browser, they handle two completely different aspects of how an element behaves.
-
-To put it simply: preventDefault() stops an action, while stopPropagation() stops travel.
-
- 5.1. preventDefault() — Stopping the Default Action
-Many HTML elements have built-in "default behaviors" defined by the browser. This method tells the browser: "Don't do what you usually do when this happens."
-
- 5.1.1.Common Use Cases:
-
-   5.1.1.1.Stopping a link (<a>) from navigating to a new URL.
-
-   5.1.1.2.Stopping a form (<form>) from refreshing the page on submit.
-
-   5.1.1.3.Stopping a checkbox from being checked.
-
- 5.2. stopPropagation() — Stopping the Bubble
-As we discussed with Event Bubbling, events normally travel from the target element up to the window. This method tells the browser: "Stop the event here. Don't let any parent elements know this happened."
-
-  5.2.1 Common Use Case: * You have a "Delete" button inside a clickable "Table Row." You want the button to delete the item without triggering the row's "Open Details" click event.
+<h3 align="left">Languages and Tools:</h3>
+<p align="left"> <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40"/> </a> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a> <a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a> <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> </a> <a href="https://flutter.dev" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg" alt="flutter" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://nestjs.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nestjs/nestjs-plain.svg" alt="nestjs" width="40" height="40"/> </a> <a href="https://nextjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/nextjs-2.svg" alt="nextjs" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://opencv.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="opencv" width="40" height="40"/> </a> <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a> <a href="https://seaborn.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="seaborn" width="40" height="40"/> </a> <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/> </a> <a href="https://www.tensorflow.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="tensorflow" width="40" height="40"/> </a> </p>
