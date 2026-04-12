@@ -2,6 +2,8 @@
 <h3 align="center">A passionate Full-stack web development from Bangladeshi</h3>
 
 - 🔭 I’m currently working on [Job Application Tracker](https://golden-alpaca-2b85ea.netlify.app/)
+- <img width="1920" height="1080" alt="f7f3243c-3bfb-44f6-845c-696087714ea5-cover" src="https://github.com/user-attachments/assets/27f287aa-9f0b-445f-99e3-b7eaea989f97" />
+
 
 - 💬 Ask me about **react , next.js , firebase, mongodb**
 
